@@ -1,0 +1,12 @@
+
+spring:
+  r2dbc:
+    url: r2dbc:postgresql://localhost:5432/sam?reWriteBatchedInserts=true
+    username: sam
+    password: sam
+    name: sam
+    pool:
+      validate-query: select 1
+      enabled: true
+      initial-size: 10
+      max-size: 10

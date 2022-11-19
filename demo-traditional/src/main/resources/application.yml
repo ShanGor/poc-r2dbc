@@ -1,0 +1,29 @@
+spring:
+  sql:
+    init:
+      mode: never
+      platform: postgresql
+  jpa:
+    database: POSTGRESQL
+    hibernate:
+      # You have to define the ddl-auto as none, otherwise it will override the init data.
+      ddl-auto: none
+    show-sql: false
+
+    properties:
+      hibernate:
+        format_sql: false
+        jdbc:
+          batch_size: 1000
+  # Primary data source, for E1
+  datasource:
+    database-platform: postgresql
+    driver-class-name: org.postgresql.Driver
+    username: sam
+    password: sam
+    url: jdbc:postgresql://localhost:5432/sam?reWriteBatchedInserts=true
+
+    hikari:
+      connection-timeout: 3000
+    minimum-idle: 5
+    maximum-pool-size: 5
