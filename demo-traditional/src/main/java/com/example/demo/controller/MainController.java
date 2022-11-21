@@ -3,6 +3,7 @@ package com.example.demo.controller;
 import com.example.demo.data.entity.UserEntity;
 import com.example.demo.data.repository.UserRepository;
 import com.zaxxer.hikari.HikariDataSource;
+import lombok.extern.slf4j.Slf4j;
 import org.springframework.web.bind.annotation.*;
 
 import javax.annotation.Resource;
@@ -14,11 +15,13 @@ import java.util.Optional;
 import java.util.UUID;
 
 @RestController
+@Slf4j
 public class MainController {
     @Resource
     private UserRepository userRepo;
     @GetMapping("/users/{userId}")
     public Optional<UserEntity> getUser(@PathVariable("userId") Long userId) {
+        log.info("/users/{}", userId);
         return userRepo.findById(userId);
     }
 
