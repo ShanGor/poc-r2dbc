@@ -5,8 +5,7 @@ import com.example.demo.data.repository.UserRepository;
 import com.zaxxer.hikari.HikariDataSource;
 import org.springframework.web.bind.annotation.*;
 
-import javax.annotation.Resource;
-import javax.sql.DataSource;
+import jakarta.annotation.Resource;
 import java.sql.Connection;
 import java.sql.SQLException;
 import java.sql.Timestamp;

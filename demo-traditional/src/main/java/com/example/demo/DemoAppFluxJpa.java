@@ -5,10 +5,10 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
 
 @SpringBootApplication
 
-public class PocForTraditionalJpaApplication {
+public class DemoAppFluxJpa {
 
 	public static void main(String[] args) {
-		SpringApplication.run(PocForTraditionalJpaApplication.class, args);
+		SpringApplication.run(DemoAppFluxJpa.class, args);
 	}
 
 }

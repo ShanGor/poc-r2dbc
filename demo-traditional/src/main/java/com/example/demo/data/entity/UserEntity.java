@@ -2,7 +2,7 @@ package com.example.demo.data.entity;
 
 import lombok.Data;
 
-import javax.persistence.*;
+import jakarta.persistence.*;
 import java.sql.Timestamp;
 
 @Data
