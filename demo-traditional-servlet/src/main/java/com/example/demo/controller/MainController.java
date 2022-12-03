@@ -28,6 +28,12 @@ public class MainController {
         user.setLastUpdateTime(new Timestamp(System.currentTimeMillis()));
         return userRepo.save(user);
     }
+
+    @GetMapping("/twice/{number}")
+    public long twice(@PathVariable("number") long number) {
+        return number * 2;
+    }
+
     @Resource
     HikariDataSource dataSource;
     @GetMapping("/users/random/{count}")
