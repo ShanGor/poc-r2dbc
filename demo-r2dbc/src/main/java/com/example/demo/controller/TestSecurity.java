@@ -12,6 +12,8 @@ import org.springframework.web.bind.annotation.RestController;
 public class TestSecurity {
     @GetMapping("/test-security")
     public AuthUser test(ServerHttpRequest request) {
-        return AuthContext.getAuthUser(request);
+        var result = AuthContext.getAuthUser(request);
+        log.info("test-security: {}", result);
+        return result;
     }
 }

@@ -37,7 +37,7 @@
 		</dependency>
 		<dependency>
 			<groupId>cn.gzten.security</groupId>
-			<artifactId>light-security-helper-reactive</artifactId>
+			<artifactId>light-security-helper</artifactId>
 			<version>0.0.1-SNAPSHOT</version>
 		</dependency>
 		<dependency>
