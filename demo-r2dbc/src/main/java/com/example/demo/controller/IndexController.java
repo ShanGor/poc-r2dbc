@@ -10,6 +10,7 @@ import lombok.Data;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.data.r2dbc.core.R2dbcEntityTemplate;
 import org.springframework.http.server.reactive.ServerHttpRequest;
+import org.springframework.r2dbc.core.DatabaseClient;
 import org.springframework.web.bind.annotation.*;
 import reactor.core.publisher.Flux;
 import reactor.core.publisher.Mono;
@@ -46,7 +47,9 @@ public class IndexController {
     @GetMapping("/test-sql")
     public Flux testSql() {
         // the element is a mutable map, so we do not need to copy it.
-        return template.getDatabaseClient().sql("select * from test").fetch().all().map(o -> {
+        return template.getDatabaseClient().sql("select * from test where username=:v1")
+                .bind(0, "hello")
+                .fetch().all().map(o -> {
             o.entrySet().forEach(e -> {
                 if (e.getValue() instanceof io.r2dbc.postgresql.codec.Json) {
                     String value = ((Json) e.getValue()).asString();
